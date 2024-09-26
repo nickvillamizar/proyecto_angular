@@ -1,0 +1,6 @@
+<div class="container">
+  <app-register *ngIf="currentStep === 1" [userData]="userData" (nextStep)="goToNextStep()"></app-register>
+  <app-task-selection *ngIf="currentStep === 2" [userData]="userData" (nextStep)="goToNextStep()"></app-task-selection>
+  <app-terms *ngIf="currentStep === 3" [userData]="userData" (nextStep)="goToNextStep()"></app-terms>
+  <app-success *ngIf="currentStep === 4" [userData]="userData"></app-success>
+</div>

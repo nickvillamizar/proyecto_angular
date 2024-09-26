@@ -1,0 +1,9 @@
+<h2>Terms and Conditions</h2>
+<p>Please accept our terms and conditions.</p>
+<label>
+  <input type="checkbox" [(ngModel)]="acceptedTerms">
+  I accept the terms and conditions.
+</label>
+<button (click)="onNext()" [disabled]="!acceptedTerms">Next</button>
+
+

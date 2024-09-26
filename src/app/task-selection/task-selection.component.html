@@ -1,0 +1,10 @@
+<h2>Select Tasks</h2>
+<form>
+  <div *ngFor="let task of tasks">
+    <label>
+      <input type="checkbox" [(ngModel)]="selectedTasks[task]" (change)="onNext()">
+      {{ task }}
+    </label>
+  </div>
+</form>
+
