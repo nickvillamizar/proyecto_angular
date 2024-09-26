@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-task-selection',
@@ -6,14 +6,18 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./task-selection.component.css']
 })
 export class TaskSelectionComponent {
-  @Input() userData: any;
-  @Output() nextStep = new EventEmitter<void>();
+  @Input() tasks: string[] = []; // Asegúrate de que tasks sea un arreglo de strings
+  selectedTasks: { [key: string]: boolean } = {}; // Usar un objeto para las tareas seleccionadas
 
-  tasks = ['Task 1', 'Task 2', 'Task 3'];
-
-  selectedTasks: string[] = [];
+  constructor() {
+    // Inicializar selectedTasks con todas las tareas en falso
+    this.tasks.forEach(task => {
+      this.selectedTasks[task] = false;
+    });
+  }
 
   onNext() {
-    this.nextStep.emit();
+    // Lógica para manejar el siguiente paso
+    console.log(this.selectedTasks);
   }
 }
